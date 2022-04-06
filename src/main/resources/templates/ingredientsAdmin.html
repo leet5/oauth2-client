@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+</head>
+
+<body>
+<h2>Taco Cloud Admin: Ingredients</h2>
+
+<form method="POST" th:action="@{/admin/ingredients}">
+    ID: <input type="text" name="id"/><br/>
+    Name: <input type="text" name="name"/><br/>
+    Type: <input type="type" name="type"/><br/>
+    <input type="submit" />
+</form>
+
+<hr/>
+
+<ul>
+    <li th:each="ingredient: ${ingredients}" th:text="${ingredient.name}"></li>
+</ul>
+</body>
+</html>
